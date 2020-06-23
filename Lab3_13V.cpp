@@ -19,8 +19,7 @@ public:
 	double By {};
 	double Bz {};
 
-	Data(double x, double y, double z, double bx, double by, double bz)
-			: X(x), Y(y), Z(z), Bx(bx), By(by), Bz(bz)
+	Data(double x, double y, double z, double bx, double by, double bz) : X(x), Y(y), Z(z), Bx(bx), By(by), Bz(bz)
 	{};
 	Data() = default;;
 };
@@ -41,8 +40,7 @@ void printData(const vector <Data>& array)
 {
 	for (const auto& i : array)
 	{
-		cout << i.X << '\t' << i.Y << '\t' << i.Z << '\t' << i.X << '\t' << i.Bx
-			 << '\t' << i.By << '\t' << i.Bz;
+		cout << i.X << '\t' << i.Y << '\t' << i.Z << '\t' << i.X << '\t' << i.Bx << '\t' << i.By << '\t' << i.Bz;
 	}
 }
 
@@ -94,8 +92,7 @@ int main()
 
 	for (auto& i : array)
 	{
-		output_file_Bz << convertToExcel(i.Z) << '\t'
-					   << convertToExcel(sqrt(pow(i.Bx, 2.0) + pow(i.By, 2.0) + pow(i.Bz, 2.0))) << endl;
+		output_file_Bz << convertToExcel(i.Z) << '\t' << convertToExcel(sqrt(pow(i.Bx, 2.0) + pow(i.By, 2.0) + pow(i.Bz, 2.0))) << endl;
 	}
 
 	sort(array.begin(), array.end(), compareZ);
@@ -121,9 +118,7 @@ int main()
 
 	for (auto& i : array)
 	{
-		output_file_check_Bz << i.Bz << '\t' << ((M0 * I * R * R) / 2.0) * ((1.0 / (pow(i.Z * i.Z + R * R, 1.5)) +
-																			 (1.0 / (pow(pow(i.Z - distance, 2) + R * R,
-																						 1.5))))) << endl;
+		output_file_check_Bz << i.Bz << '\t' << ((M0 * I * R * R) / 2.0) * ((1.0 / (pow(i.Z * i.Z + R * R, 1.5)) + (1.0 / (pow(pow(i.Z - distance, 2) + R * R, 1.5))))) << endl;
 	}
 
 	return 0;
