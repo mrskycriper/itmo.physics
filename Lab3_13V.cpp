@@ -19,8 +19,7 @@ public:
 	double By {};
 	double Bz {};
 
-	Data(double x, double y, double z, double bx, double by, double bz) : X(x), Y(y), Z(z), Bx(bx), By(by), Bz(bz)
-	{};
+	Data(double x, double y, double z, double bx, double by, double bz) : X(x), Y(y), Z(z), Bx(bx), By(by), Bz(bz) {};
 	Data() = default;;
 };
 
