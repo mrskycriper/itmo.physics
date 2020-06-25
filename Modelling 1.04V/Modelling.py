@@ -39,5 +39,4 @@ while h < 1.0:
     h = (1 - h0) + a * time * time / 2
     time += (0.01 + random() / 100)
 
-format(time, '.2f')
 print 'time = ' + format(time, '.2f') + 'c'
